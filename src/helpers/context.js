@@ -16,6 +16,7 @@ const tempUrl =
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
+  // State values
   const [waiting, setWaiting] = useState(true);
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState([]);
@@ -24,6 +25,7 @@ const AppProvider = ({ children }) => {
   const [error, setError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Fetch questions function
   const fetchQuestions = async (url) => {
     setLoading(true);
     setWaiting(false);
@@ -44,11 +46,12 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  // Next question function
   const nextQuestion = () => {
     setIndex((oldIndex) => {
       const index = oldIndex + 1;
       if (index > questions.length - 1) {
-        // openModal()
+        openModal();
         return 0;
       } else {
         return index;
@@ -56,11 +59,24 @@ const AppProvider = ({ children }) => {
     });
   };
 
+  // Check if answer ic correct function
   const checkAnswer = (value) => {
     if (value) {
       setCorrect((oldState) => oldState + 1);
     }
     nextQuestion();
+  };
+
+  // Open modal function
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  // Close modal function
+  const closeModal = () => {
+    setWaiting(true);
+    setCorrect(0);
+    setIsModalOpen(false);
   };
 
   useEffect(() => {
@@ -79,13 +95,14 @@ const AppProvider = ({ children }) => {
         isModalOpen,
         nextQuestion,
         checkAnswer,
+        closeModal,
       }}
     >
       {children}
     </AppContext.Provider>
   );
 };
-// make sure use
+
 export const useGlobalContext = () => {
   return useContext(AppContext);
 };
