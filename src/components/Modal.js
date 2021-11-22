@@ -1,5 +1,5 @@
 import React from "react";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "../helpers/context";
 
 const Modal = () => {
   return <h2>modal component</h2>;
