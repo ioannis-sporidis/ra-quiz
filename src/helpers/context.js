@@ -12,8 +12,6 @@ const table = {
 
 const API_ENDPOINT = "https://opentdb.com/api.php?";
 
-const url = "";
-
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
