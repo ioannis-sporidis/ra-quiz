@@ -25,7 +25,7 @@ const AppProvider = ({ children }) => {
   const [error, setError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [quiz, setQuiz] = useState({
-    amount: 10,
+    amount: 5,
     category: "general knowledge",
     difficulty: "easy",
   });
@@ -86,11 +86,14 @@ const AppProvider = ({ children }) => {
 
   // Form functions
   const handleChange = (e) => {
-    console.log(e);
+    const name = e.target.name;
+    const value = e.target.value;
+    setQuiz({ ...quiz, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(quiz);
   };
 
   return (

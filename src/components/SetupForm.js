@@ -9,7 +9,7 @@ const SetupForm = () => {
         <form className="setup-form">
           <h2>Setup Quiz</h2>
           {/* amount */}
-          <div className="form-control">
+          {/* <div className="form-control">
             <label htmlFor="amount">number of questions</label>
             <input
               type="number"
@@ -21,7 +21,24 @@ const SetupForm = () => {
               min={1}
               max={20}
             />
+          </div> */}
+          <div className="form-control">
+            <label htmlFor="amount">number of questions</label>
+            <select
+              name="amount"
+              id="amount"
+              className="form-input"
+              value={quiz.amount}
+              onChange={handleChange}
+              className="form-input"
+            >
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+            </select>
           </div>
+
           {/* category */}
           <div className="form-control">
             <label htmlFor="category">category</label>
