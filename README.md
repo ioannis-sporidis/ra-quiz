@@ -1,7 +1,7 @@
 
 # Quiz App
 
-Click [here](https://ioannis-sporidis.github.io/ra-hacker-news/) to check out the app
+Click [here](https://ioannis-sporidis.github.io/ra-quiz/) to check out the app
 
 ## Dependencies
 
