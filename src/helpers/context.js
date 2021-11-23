@@ -24,6 +24,11 @@ const AppProvider = ({ children }) => {
   const [correct, setCorrect] = useState(0);
   const [error, setError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [quiz, setQuiz] = useState({
+    amount: 10,
+    category: "general knowledge",
+    difficulty: "easy",
+  });
 
   // Fetch questions function
   const fetchQuestions = async (url) => {
@@ -79,9 +84,14 @@ const AppProvider = ({ children }) => {
     setIsModalOpen(false);
   };
 
-  useEffect(() => {
-    fetchQuestions(tempUrl);
-  }, []);
+  // Form functions
+  const handleChange = (e) => {
+    console.log(e);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <AppContext.Provider
@@ -96,6 +106,9 @@ const AppProvider = ({ children }) => {
         nextQuestion,
         checkAnswer,
         closeModal,
+        quiz,
+        handleChange,
+        handleSubmit,
       }}
     >
       {children}
