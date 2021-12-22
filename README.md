@@ -1,13 +1,13 @@
 
 # Quiz App
 
-Click [here](https://ioannis-sporidis.github.io/ra-quiz/) to check out the app
+Check out the live app [here](https://ioannis-sporidis.github.io/ra-quiz/).
 
 ## Dependencies
 
 - [React](https://reactjs.org/)
 - [Axios](https://www.npmjs.com/package/axios)
-- [NPM gh-pages](https://www.npmjs.com/package/gh-pages)
+- [NPM Github Pages](https://www.npmjs.com/package/gh-pages)
 
 ## API
 [Open Trivia DB](https://opentdb.com/)
