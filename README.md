@@ -1,7 +1,7 @@
 
 # Quiz App
 
-Check out the live app [here](https://ioannis-sporidis.github.io/ra-quiz/).
+Check out the live app [here](https://ioannis-sporidis.github.io/ra-quiz/)
 
 ## Dependencies
 
